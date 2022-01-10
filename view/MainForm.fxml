@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="614.0" prefWidth="950.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+   <children>
+      <TextArea fx:id="txtText" layoutX="41.0" layoutY="187.0" prefHeight="401.0" prefWidth="834.0" AnchorPane.bottomAnchor="115.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="187.0" />
+      <Button layoutX="41.0" layoutY="114.0" mnemonicParsing="false" onAction="#btnOpenOnAction" prefHeight="45.0" prefWidth="53.0" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="862.0" AnchorPane.topAnchor="114.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="btnOpenFile" fitHeight="28.0" fitWidth="34.0" onDragDetected="#btnOpenFileOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assats/openfile.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="87.0" layoutY="114.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="45.0" prefWidth="58.0" AnchorPane.bottomAnchor="545.0" AnchorPane.topAnchor="114.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="btnNewFile" fitHeight="44.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assats/new-page.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btncut" layoutX="145.0" layoutY="114.0" mnemonicParsing="false" onAction="#btnCutOnAction" prefHeight="45.0" prefWidth="53.0" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="758.0" AnchorPane.topAnchor="114.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assats/cut.png" />
+               </image></ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnPaste" layoutX="191.0" layoutY="114.0" mnemonicParsing="false" onAction="#btnPasteOnAction" prefHeight="45.0" prefWidth="53.0" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="712.0" AnchorPane.topAnchor="114.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assats/paste.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnCopy" layoutX="237.0" layoutY="114.0" mnemonicParsing="false" onAction="#btnCopyOnAction" prefHeight="45.0" prefWidth="53.0" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="666.0" AnchorPane.topAnchor="114.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assats/icons8-copy-24.png" />
+               </image></ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="283.0" layoutY="114.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="45.0" prefWidth="58.0" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="283.0" AnchorPane.rightAnchor="615.0" AnchorPane.topAnchor="114.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="btnSave" fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assats/save.png" />
+               </image></ImageView>
+         </graphic>
+      </Button>
+      <MenuBar layoutX="41.0" layoutY="67.0" prefHeight="28.0" prefWidth="271.0" AnchorPane.bottomAnchor="609.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="644.0" AnchorPane.topAnchor="67.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+             <items>
+                <MenuItem mnemonicParsing="false" text=" New" />
+                <MenuItem mnemonicParsing="false" text=" Open" />
+                <MenuItem mnemonicParsing="false" text=" Save" />
+                <MenuItem mnemonicParsing="false" text=" Exit" />
+             </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+             <items>
+                <MenuItem mnemonicParsing="false" text=" Find" />
+                <MenuItem mnemonicParsing="false" text=" Find All" />
+                <MenuItem mnemonicParsing="false" text=" Replace" />
+                <MenuItem mnemonicParsing="false" text=" Replace All" />
+             </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+                <MenuItem mnemonicParsing="false" text="About" />
+             </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="348.0" layoutY="21.0" prefHeight="46.0" prefWidth="260.0" text="Text Editor" textFill="#1c10f2" AnchorPane.bottomAnchor="637.0" AnchorPane.leftAnchor="348.0" AnchorPane.rightAnchor="348.0" AnchorPane.topAnchor="21.0">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtsearch" layoutX="342.0" layoutY="136.0" prefHeight="24.0" prefWidth="279.0" promptText="Replace Text" AnchorPane.bottomAnchor="543.0" AnchorPane.leftAnchor="342.0" AnchorPane.rightAnchor="329.0" AnchorPane.topAnchor="136.0" />
+      <ToggleButton fx:id="tglRegex" layoutX="706.0" layoutY="122.0" mnemonicParsing="false" onAction="#tglRegexOnAction" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: gray;" text="Regx" AnchorPane.leftAnchor="706.0" AnchorPane.rightAnchor="172.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton fx:id="tglCaseSensitive" layoutX="787.0" layoutY="123.0" mnemonicParsing="false" onAction="#tglCaseSensitiveOnAction" prefHeight="33.0" prefWidth="89.0" style="-fx-background-color: gray;" text="Case Sensitive" AnchorPane.leftAnchor="787.0" AnchorPane.rightAnchor="74.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </ToggleButton>
+      <Button fx:id="btnReplace" layoutX="625.0" layoutY="136.0" mnemonicParsing="false" onAction="#btnReplaceOnAction" prefHeight="24.0" prefWidth="72.0" text="Replace" AnchorPane.bottomAnchor="543.0" AnchorPane.leftAnchor="625.0" AnchorPane.rightAnchor="253.0" AnchorPane.topAnchor="136.0" />
+      <Button layoutX="875.0" layoutY="187.0" mnemonicParsing="false" prefHeight="401.0" prefWidth="23.0" AnchorPane.bottomAnchor="115.0" AnchorPane.leftAnchor="875.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="187.0" />
+      <Separator layoutX="43.0" layoutY="96.0" prefHeight="13.0" prefWidth="854.0" />
+      <Separator layoutX="42.0" layoutY="168.0" prefHeight="13.0" prefWidth="854.0" />
+      <TextField fx:id="txtFindCount" layoutX="43.0" layoutY="607.0" prefHeight="24.0" prefWidth="164.0" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="743.0" AnchorPane.topAnchor="607.0" />
+      <TextField fx:id="txtWordCount" layoutX="726.0" layoutY="607.0" prefHeight="24.0" prefWidth="171.0" AnchorPane.leftAnchor="726.0" AnchorPane.rightAnchor="53.0" />
+      <Label fx:id="lblWordCount" layoutX="779.0" layoutY="633.0" prefHeight="13.0" prefWidth="95.0" text="Word Count" textFill="#fcfafa" />
+      <Label fx:id="lblFindingCount" layoutX="75.0" layoutY="643.0" prefHeight="13.0" prefWidth="95.0" text="Finding Count" textFill="#fcfafa" />
+      <TextField fx:id="txtFind" layoutX="341.0" layoutY="108.0" prefHeight="24.0" prefWidth="279.0" promptText="find text" />
+      <Button fx:id="btnFind" layoutX="625.0" layoutY="108.0" mnemonicParsing="false" onAction="#btnFindOnAction" prefHeight="24.0" prefWidth="72.0" text="Find" />
+      <Button fx:id="btnScrollDown" layoutX="875.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnScrollDownOnAction" prefHeight="33.0" prefWidth="23.0" />
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="876.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assats/down-arrow%20(1).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnScrollUp" layoutX="875.0" layoutY="552.0" mnemonicParsing="false" onAction="#btnScrollUpOnAction" prefHeight="33.0" prefWidth="23.0" />
+      <ImageView fitHeight="22.0" fitWidth="15.0" layoutX="881.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assats/up-arrows.png" />
+         </image>
+      </ImageView>
+      <DropdownButton layoutX="527.0" layoutY="112.0">
+          <items>
+              <MenuItem text="Choice 1" />
+              <MenuItem text="Choice 2" />
+              <MenuItem text="Choice 3" />
+          </items>
+      </DropdownButton>
+   </children>
+</AnchorPane>
